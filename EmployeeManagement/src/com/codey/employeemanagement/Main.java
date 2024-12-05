@@ -21,15 +21,15 @@ public class Main {
 //    db.getEmployees();
 
     Scanner scanner = new Scanner(System.in);
-    System.out.println("Would you like to add an employee? ");
+    System.out.println("What would you like to do, add an employee or view all? (add or view): ");
     String answer = scanner.nextLine();
 
-    if (answer.equalsIgnoreCase("yes")) {
+    if (answer.equalsIgnoreCase("add")) {
       db.addEmployee(EmployeeInput.selectEmployeeType());
+    } else if (answer.equalsIgnoreCase("view")) {
+      db.getEmployees();
     } else {
       System.out.println("Have a good day!");
     }
-
-    db.getEmployees();
   }
 }
